@@ -1,0 +1,534 @@
+{
+  "metadata": {
+    "title_suggestion": "Test PCEP – Python (sin POO)"
+  },
+  "settings": {
+    "shuffle_questions": false,
+    "shuffle_options": true,
+    "passing_score": 70,
+    "show_explanation": true,
+    "show_progress": true
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(2 ** 3 ** 2)",
+      "options": [
+        "64",
+        "512",
+        "36",
+        "Error"
+      ],
+      "correct_answer": "512",
+      "explanation": "** es asociativo por la derecha: 3**2 = 9, 2**9 = 512"
+    },
+    {
+      "id": "q2",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(-7 // 2)",
+      "options": [
+        "-3",
+        "-3.5",
+        "-4",
+        "3"
+      ],
+      "correct_answer": "-4",
+      "explanation": "// redondea hacia −∞"
+    },
+    {
+      "id": "q3",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(-7 % 3)",
+      "options": [
+        "2",
+        "-1",
+        "1",
+        "-2"
+      ],
+      "correct_answer": "2",
+      "explanation": "El resto toma el signo del divisor: -7 = 3·(-3) + 2"
+    },
+    {
+      "id": "q4",
+      "type": "single_choice",
+      "question": "¿Cuál de estos es un identificador válido en Python?",
+      "options": [
+        "1var",
+        "my-var",
+        "class",
+        "_var1"
+      ],
+      "correct_answer": "_var1",
+      "explanation": "No puede empezar por dígito, ni llevar -, ni ser palabra reservada"
+    },
+    {
+      "id": "q5",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(0o17)",
+      "options": [
+        "17",
+        "15",
+        "7",
+        "SyntaxError"
+      ],
+      "correct_answer": "15",
+      "explanation": "0o17 en octal = 1·8 + 7 = 15"
+    },
+    {
+      "id": "q6",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(1e3)",
+      "options": [
+        "1000",
+        "1e3",
+        "1000.0",
+        "3.0"
+      ],
+      "correct_answer": "1000.0",
+      "explanation": "La notación científica siempre da float"
+    },
+    {
+      "id": "q7",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(10 // 4 * 2 + 3 % 2)",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "5.0"
+      ],
+      "correct_answer": "5",
+      "explanation": "(10//4)*2 = 4; 3%2 = 1; 4 + 1 = 5"
+    },
+    {
+      "id": "q8",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(int(\"7\") + float(\"2.5\"))",
+      "options": [
+        "9",
+        "9.5",
+        "72.5",
+        "TypeError"
+      ],
+      "correct_answer": "9.5",
+      "explanation": "7 + 2.5 = 9.5 (int + float → float)"
+    },
+    {
+      "id": "q9",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(bool(\"\"), bool(\" \"))",
+      "options": [
+        "False False",
+        "True True",
+        "False True",
+        "True False"
+      ],
+      "correct_answer": "False True",
+      "explanation": "Solo la cadena vacía es False; \" \" tiene un carácter"
+    },
+    {
+      "id": "q10",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(5 & 3, 5 | 3, 5 ^ 3)",
+      "options": [
+        "1 7 6",
+        "7 1 6",
+        "1 6 7",
+        "8 7 6"
+      ],
+      "correct_answer": "1 7 6",
+      "explanation": "101 & 011 = 001; 101 | 011 = 111; 101 ^ 011 = 110"
+    },
+    {
+      "id": "q11",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(~5)",
+      "options": [
+        "5",
+        "-5",
+        "-6",
+        "4"
+      ],
+      "correct_answer": "-6",
+      "explanation": "~x = -x - 1"
+    },
+    {
+      "id": "q12",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(\"Hola\", \"mundo\", sep=\"-\", end=\"!\")",
+      "options": [
+        "Hola mundo!",
+        "Hola-mundo!",
+        "Hola-mundo-!",
+        "Hola mundo -!"
+      ],
+      "correct_answer": "Hola-mundo!",
+      "explanation": "sep va entre argumentos, end al final"
+    },
+    {
+      "id": "q13",
+      "type": "single_choice",
+      "question": "¿De qué tipo es siempre el valor devuelto por `input()`?",
+      "options": [
+        "Depende de lo que escriba el usuario",
+        "int",
+        "float",
+        "str"
+      ],
+      "correct_answer": "str",
+      "explanation": "input() siempre devuelve str"
+    },
+    {
+      "id": "q14",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nx = 3\nprint(0 or x and 7)",
+      "options": [
+        "True",
+        "3",
+        "7",
+        "0"
+      ],
+      "correct_answer": "7",
+      "explanation": "and tiene prioridad: 3 and 7 → 7; 0 or 7 → 7"
+    },
+    {
+      "id": "q15",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nfor i in range(2, 10, 3):\n    print(i, end=\" \")",
+      "options": [
+        "2 5 8",
+        "2 5 8 11",
+        "3 6 9",
+        "2 4 6 8"
+      ],
+      "correct_answer": "2 5 8",
+      "explanation": "Empieza en 2, salta de 3 en 3, el 10 no se incluye"
+    },
+    {
+      "id": "q16",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ni = 0\nwhile i < 3:\n    i += 1\nelse:\n    print(i)",
+      "options": [
+        "Nada",
+        "2",
+        "3",
+        "0 1 2"
+      ],
+      "correct_answer": "3",
+      "explanation": "El else del while se ejecuta si no hay break"
+    },
+    {
+      "id": "q17",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nfor i in range(5):\n    if i == 2:\n        break\nelse:\n    print(\"fin\")\nprint(i)",
+      "options": [
+        "fin y luego 2",
+        "2",
+        "fin",
+        "4"
+      ],
+      "correct_answer": "2",
+      "explanation": "El break impide el else; i vale 2"
+    },
+    {
+      "id": "q18",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nc = 0\nfor i in range(10):\n    if i % 3 == 0:\n        continue\n    c += 1\nprint(c)",
+      "options": [
+        "4",
+        "7",
+        "10",
+        "6"
+      ],
+      "correct_answer": "6",
+      "explanation": "Se saltan 0, 3, 6, 9 → 10 − 4 = 6"
+    },
+    {
+      "id": "q19",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nx = 15\nif x > 10:\n    print(\"uno\")\nelif x > 5:\n    print(\"dos\")\nelse:\n    print(\"tres\")",
+      "options": [
+        "uno",
+        "uno dos",
+        "dos",
+        "tres"
+      ],
+      "correct_answer": "uno",
+      "explanation": "Solo se ejecuta la primera rama verdadera"
+    },
+    {
+      "id": "q20",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nn = 0\nfor i in range(3):\n    for j in range(i):\n        n += 1\nprint(n)",
+      "options": [
+        "9",
+        "6",
+        "3",
+        "0"
+      ],
+      "correct_answer": "3",
+      "explanation": "0 + 1 + 2 = 3"
+    },
+    {
+      "id": "q21",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nl = [1, 2, 3]\nm = l\nm.append(4)\nprint(l)",
+      "options": [
+        "[1, 2, 3]",
+        "[1, 2, 3, 4]",
+        "[4]",
+        "Error"
+      ],
+      "correct_answer": "[1, 2, 3, 4]",
+      "explanation": "m y l apuntan a la misma lista"
+    },
+    {
+      "id": "q22",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nl = [0, 1, 2, 3, 4, 5]\nprint(l[-4:-1])",
+      "options": [
+        "[2, 3, 4]",
+        "[2, 3, 4, 5]",
+        "[1, 2, 3]",
+        "[4, 3, 2]"
+      ],
+      "correct_answer": "[2, 3, 4]",
+      "explanation": "Índices -4, -3, -2 → 2, 3, 4"
+    },
+    {
+      "id": "q23",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nl = [0, 1, 2, 3, 4, 5]\nprint(l[::-2])",
+      "options": [
+        "[0, 2, 4]",
+        "[5, 3, 1]",
+        "[4, 2, 0]",
+        "[5, 4, 3]"
+      ],
+      "correct_answer": "[5, 3, 1]",
+      "explanation": "Desde el final, de 2 en 2 hacia atrás"
+    },
+    {
+      "id": "q24",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nl = [1, 2, 3, 4]\ndel l[1:3]\nprint(l)",
+      "options": [
+        "[1]",
+        "[2, 3]",
+        "[1, 4]",
+        "[1, 3, 4]"
+      ],
+      "correct_answer": "[1, 4]",
+      "explanation": "Elimina índices 1 y 2"
+    },
+    {
+      "id": "q25",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint([x * x for x in range(5) if x % 2])",
+      "options": [
+        "[0, 4, 16]",
+        "[1, 4, 9, 16]",
+        "[0, 1, 4, 9, 16]",
+        "[1, 9]"
+      ],
+      "correct_answer": "[1, 9]",
+      "explanation": "Solo impares (1, 3) → 1, 9"
+    },
+    {
+      "id": "q26",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nl = [3, 1, 2]\nprint(l.sort())",
+      "options": [
+        "[1, 2, 3]",
+        "[3, 1, 2]",
+        "None",
+        "Error"
+      ],
+      "correct_answer": "None",
+      "explanation": "sort() ordena in situ y devuelve None"
+    },
+    {
+      "id": "q27",
+      "type": "single_choice",
+      "question": "¿Qué ocurre al ejecutar este código?\n\nt = (1, 2, 3)\nt[0] = 5",
+      "options": [
+        "t pasa a ser (5, 2, 3)",
+        "TypeError",
+        "IndexError",
+        "t sigue siendo (1, 2, 3) sin error"
+      ],
+      "correct_answer": "TypeError",
+      "explanation": "Las tuplas son inmutables"
+    },
+    {
+      "id": "q28",
+      "type": "single_choice",
+      "question": "¿Cuál de estas expresiones crea una tupla de un solo elemento?",
+      "options": [
+        "(5)",
+        "tuple(5)",
+        "(5,)",
+        "[5]"
+      ],
+      "correct_answer": "(5,)",
+      "explanation": "La coma crea la tupla; (5) es un int y tuple(5) da TypeError"
+    },
+    {
+      "id": "q29",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nd = {\"x\": 1}\nd[\"x\"] += 1\nd.update({\"y\": 5})\nprint(sum(d.values()))",
+      "options": [
+        "6",
+        "7",
+        "2",
+        "KeyError"
+      ],
+      "correct_answer": "7",
+      "explanation": "{\"x\": 2, \"y\": 5} → 7"
+    },
+    {
+      "id": "q30",
+      "type": "single_choice",
+      "question": "¿Qué ocurre al ejecutar este código?\n\nd = {\"a\": 1}\nprint(d.get(\"z\", 0))\nprint(d[\"z\"])",
+      "options": [
+        "Imprime 0 y después lanza KeyError",
+        "Imprime None y None",
+        "Imprime 0 y 0",
+        "Lanza KeyError sin imprimir nada"
+      ],
+      "correct_answer": "Imprime 0 y después lanza KeyError",
+      "explanation": "get devuelve el valor por defecto; [] lanza KeyError"
+    },
+    {
+      "id": "q31",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(\"-\".join(\"a,b,c\".split(\",\")))",
+      "options": [
+        "['a', 'b', 'c']",
+        "a,b,c",
+        "a-b-c",
+        "-a-b-c-"
+      ],
+      "correct_answer": "a-b-c",
+      "explanation": "split → ['a','b','c']; join los une con \"-\""
+    },
+    {
+      "id": "q32",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ndef f(a, b=2, c=3):\n    return a + b * c\n\nprint(f(1, c=4))",
+      "options": [
+        "9",
+        "7",
+        "12",
+        "TypeError"
+      ],
+      "correct_answer": "9",
+      "explanation": "1 + 2·4 = 9"
+    },
+    {
+      "id": "q33",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ndef f():\n    pass\n\nprint(f())",
+      "options": [
+        "0",
+        "\"\" (cadena vacía)",
+        "None",
+        "Error"
+      ],
+      "correct_answer": "None",
+      "explanation": "Una función sin return devuelve None"
+    },
+    {
+      "id": "q34",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nx = 10\ndef f():\n    global x\n    x = 5\n\nf()\nprint(x)",
+      "options": [
+        "10",
+        "5",
+        "None",
+        "NameError"
+      ],
+      "correct_answer": "5",
+      "explanation": "global modifica la variable global"
+    },
+    {
+      "id": "q35",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nx = 1\ndef f():\n    x = 2\n    return x\n\nprint(f() + x)",
+      "options": [
+        "4",
+        "2",
+        "3",
+        "UnboundLocalError"
+      ],
+      "correct_answer": "3",
+      "explanation": "La x local (2) no afecta a la global (1): 2 + 1 = 3"
+    },
+    {
+      "id": "q36",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ndef f(n):\n    return 1 if n <= 1 else n * f(n - 1)\n\nprint(f(4))",
+      "options": [
+        "10",
+        "4",
+        "RecursionError",
+        "24"
+      ],
+      "correct_answer": "24",
+      "explanation": "4·3·2·1 = 24"
+    },
+    {
+      "id": "q37",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ntry:\n    print(1 / 0)\nexcept ZeroDivisionError:\n    print(\"cero\")\nexcept ArithmeticError:\n    print(\"aritm\")",
+      "options": [
+        "cero",
+        "aritm",
+        "cero aritm",
+        "Se muestra el traceback de ZeroDivisionError"
+      ],
+      "correct_answer": "cero",
+      "explanation": "Se ejecuta el primer except que coincida"
+    },
+    {
+      "id": "q38",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ntry:\n    int(\"abc\")\nexcept ValueError:\n    print(\"V\")\nelse:\n    print(\"E\")\nfinally:\n    print(\"F\")",
+      "options": [
+        "V",
+        "V F",
+        "E F",
+        "V E F"
+      ],
+      "correct_answer": "V F",
+      "explanation": "Hay excepción → no se ejecuta else; finally siempre"
+    },
+    {
+      "id": "q39",
+      "type": "single_choice",
+      "question": "¿Qué excepción lanza `[1, 2][5]`?",
+      "options": [
+        "KeyError",
+        "ValueError",
+        "IndexError",
+        "TypeError"
+      ],
+      "correct_answer": "IndexError",
+      "explanation": "Índice fuera de rango"
+    },
+    {
+      "id": "q40",
+      "type": "single_choice",
+      "question": "Sobre la jerarquía de excepciones, ¿qué afirmación es correcta?",
+      "options": [
+        "ArithmeticError es subclase de ZeroDivisionError",
+        "IndexError y KeyError son subclases de LookupError",
+        "ValueError es subclase de TypeError",
+        "Exception es subclase de ValueError"
+      ],
+      "correct_answer": "IndexError y KeyError son subclases de LookupError",
+      "explanation": "LookupError es la clase base de IndexError y KeyError"
+    }
+  ]
+}

@@ -1,0 +1,534 @@
+{
+  "metadata": {
+    "title_suggestion": "Test PCAP – Python (sin POO)"
+  },
+  "settings": {
+    "shuffle_questions": false,
+    "shuffle_options": true,
+    "passing_score": 70,
+    "show_explanation": true,
+    "show_progress": true
+  },
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nimport math\nprint(math.floor(-2.5), math.ceil(-2.5))",
+      "options": [
+        "-2 -3",
+        "-3 -2",
+        "-2 -2",
+        "-3 -3"
+      ],
+      "correct_answer": "-3 -2",
+      "explanation": "floor redondea hacia −∞ (-3) y ceil hacia +∞ (-2)."
+    },
+    {
+      "id": "q2",
+      "type": "single_choice",
+      "question": "Tras ejecutar from math import sqrt as s, ¿qué llamada es correcta?",
+      "options": [
+        "math.sqrt(16)",
+        "sqrt(16)",
+        "s(16)",
+        "math.s(16)"
+      ],
+      "correct_answer": "s(16)",
+      "explanation": "Con 'as' el nombre importado pasa a ser s; ni math ni sqrt existen en el espacio de nombres."
+    },
+    {
+      "id": "q3",
+      "type": "single_choice",
+      "question": "¿Qué valor tiene __name__ en un módulo que se ejecuta directamente como script?",
+      "options": [
+        "El nombre del archivo",
+        "__main__",
+        "__module__",
+        "None"
+      ],
+      "correct_answer": "__main__",
+      "explanation": "Al ejecutarse directamente, __name__ vale '__main__'; al importarse, vale el nombre del módulo."
+    },
+    {
+      "id": "q4",
+      "type": "single_choice",
+      "question": "¿Qué archivo convierte tradicionalmente un directorio en un paquete de Python?",
+      "options": [
+        "__main__.py",
+        "setup.py",
+        "__init__.py",
+        "package.py"
+      ],
+      "correct_answer": "__init__.py",
+      "explanation": "__init__.py se ejecuta al importar el paquete y lo marca como paquete regular."
+    },
+    {
+      "id": "q5",
+      "type": "single_choice",
+      "question": "¿Dónde busca Python los módulos al hacer un import?",
+      "options": [
+        "En las rutas de sys.path",
+        "Solo en el directorio actual",
+        "En os.environ",
+        "En sys.modules únicamente"
+      ],
+      "correct_answer": "En las rutas de sys.path",
+      "explanation": "sys.path es la lista de directorios donde se buscan los módulos (sys.modules es solo la caché de los ya cargados)."
+    },
+    {
+      "id": "q6",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nimport random\nrandom.seed(0)\na = random.random()\nrandom.seed(0)\nb = random.random()\nprint(a == b)",
+      "options": [
+        "False",
+        "True",
+        "Depende de la ejecución",
+        "Error"
+      ],
+      "correct_answer": "True",
+      "explanation": "Con la misma semilla, el generador produce la misma secuencia."
+    },
+    {
+      "id": "q7",
+      "type": "single_choice",
+      "question": "¿Qué valores puede devolver random.randrange(1, 5)?",
+      "options": [
+        "1, 2, 3, 4 y 5",
+        "0, 1, 2, 3 y 4",
+        "1, 2, 3 y 4",
+        "2, 3 y 4"
+      ],
+      "correct_answer": "1, 2, 3 y 4",
+      "explanation": "randrange excluye el límite superior, como range. randint(1, 5) sí incluiría el 5."
+    },
+    {
+      "id": "q8",
+      "type": "single_choice",
+      "question": "¿Qué contiene la carpeta __pycache__?",
+      "options": [
+        "Copias de seguridad del código fuente",
+        "Archivos .pyc con el bytecode compilado de los módulos importados",
+        "Los paquetes instalados con pip",
+        "Registros de errores"
+      ],
+      "correct_answer": "Archivos .pyc con el bytecode compilado de los módulos importados",
+      "explanation": "Python guarda allí el bytecode para no recompilar los módulos si no han cambiado."
+    },
+    {
+      "id": "q9",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ntry:\n    raise ValueError(\"x\")\nexcept (TypeError, ValueError) as e:\n    print(type(e).__name__, e.args)",
+      "options": [
+        "ValueError x",
+        "TypeError ('x',)",
+        "ValueError ('x',)",
+        "ValueError ['x']"
+      ],
+      "correct_answer": "ValueError ('x',)",
+      "explanation": "Una tupla en except captura cualquiera de sus tipos; args es una tupla con los argumentos."
+    },
+    {
+      "id": "q10",
+      "type": "single_choice",
+      "question": "¿Qué ocurre al ejecutar este código?\n\nx = 0\nassert x, \"cero\"",
+      "options": [
+        "No ocurre nada",
+        "Imprime cero",
+        "ValueError: cero",
+        "AssertionError: cero"
+      ],
+      "correct_answer": "AssertionError: cero",
+      "explanation": "assert lanza AssertionError con el mensaje indicado si la condición es falsa (0 lo es)."
+    },
+    {
+      "id": "q11",
+      "type": "single_choice",
+      "question": "¿Qué ocurre al ejecutar este código?\n\ntry:\n    x = 1 / 0\nexcept:\n    print(\"A\")\nexcept ZeroDivisionError:\n    print(\"B\")",
+      "options": [
+        "Imprime A",
+        "Imprime B",
+        "Imprime A y B",
+        "SyntaxError"
+      ],
+      "correct_answer": "SyntaxError",
+      "explanation": "Un except sin tipo debe ser el último; si no, es un error de sintaxis."
+    },
+    {
+      "id": "q12",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ntry:\n    try:\n        1 / 0\n    except ZeroDivisionError:\n        print(\"a\")\n        raise\nexcept ArithmeticError:\n    print(\"b\")",
+      "options": [
+        "a",
+        "a b (en dos líneas)",
+        "b",
+        "a y luego el traceback"
+      ],
+      "correct_answer": "a b (en dos líneas)",
+      "explanation": "raise sin argumentos relanza la excepción actual, que captura el try exterior."
+    },
+    {
+      "id": "q13",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ndef f():\n    try:\n        return 1\n    finally:\n        print(\"F\")\n\nprint(f())",
+      "options": [
+        "1",
+        "F",
+        "F y luego 1",
+        "1 y luego F"
+      ],
+      "correct_answer": "F y luego 1",
+      "explanation": "finally se ejecuta antes de que la función devuelva el valor."
+    },
+    {
+      "id": "q14",
+      "type": "single_choice",
+      "question": "¿Cuál es la clase base de todas las excepciones predefinidas?",
+      "options": [
+        "Exception",
+        "BaseException",
+        "Error",
+        "StandardError"
+      ],
+      "correct_answer": "BaseException",
+      "explanation": "BaseException es la raíz; Exception deriva de ella."
+    },
+    {
+      "id": "q15",
+      "type": "single_choice",
+      "question": "¿Cuál de estas excepciones NO captura except Exception?",
+      "options": [
+        "ValueError",
+        "IndexError",
+        "ZeroDivisionError",
+        "KeyboardInterrupt"
+      ],
+      "correct_answer": "KeyboardInterrupt",
+      "explanation": "KeyboardInterrupt (como SystemExit) deriva directamente de BaseException."
+    },
+    {
+      "id": "q16",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ntry:\n    print(int(\"3\") + \"3\")\nexcept ValueError:\n    print(\"V\")\nexcept TypeError:\n    print(\"T\")",
+      "options": [
+        "V",
+        "T",
+        "6",
+        "33"
+      ],
+      "correct_answer": "T",
+      "explanation": "int(\"3\") funciona, pero sumar int y str lanza TypeError."
+    },
+    {
+      "id": "q17",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(ord(\"a\") - ord(\"A\"))",
+      "options": [
+        "1",
+        "26",
+        "32",
+        "-32"
+      ],
+      "correct_answer": "32",
+      "explanation": "En ASCII/Unicode, 'a' es 97 y 'A' es 65."
+    },
+    {
+      "id": "q18",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(chr(ord(\"A\") + 2))",
+      "options": [
+        "C",
+        "67",
+        "B",
+        "A2"
+      ],
+      "correct_answer": "C",
+      "explanation": "ord('A') = 65; 67 corresponde a 'C'."
+    },
+    {
+      "id": "q19",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(\"banana\".find(\"na\"), \"banana\".rfind(\"na\"))",
+      "options": [
+        "2 2",
+        "4 2",
+        "2 4",
+        "-1 4"
+      ],
+      "correct_answer": "2 4",
+      "explanation": "find devuelve la primera aparición y rfind la última."
+    },
+    {
+      "id": "q20",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(\"  hola  \".strip().center(8, \"*\"))",
+      "options": [
+        "**hola**",
+        "*  hola  *",
+        "hola****",
+        "***hola***"
+      ],
+      "correct_answer": "**hola**",
+      "explanation": "strip quita los espacios ('hola', 4 caracteres) y center rellena hasta 8."
+    },
+    {
+      "id": "q21",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(\"Ab1\".isalnum(), \"Ab1\".isalpha())",
+      "options": [
+        "True True",
+        "False True",
+        "False False",
+        "True False"
+      ],
+      "correct_answer": "True False",
+      "explanation": "isalnum admite letras y dígitos; isalpha solo letras."
+    },
+    {
+      "id": "q22",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(sorted(\"cab\"))",
+      "options": [
+        "abc",
+        "['a', 'b', 'c']",
+        "('a', 'b', 'c')",
+        "['c', 'b', 'a']"
+      ],
+      "correct_answer": "['a', 'b', 'c']",
+      "explanation": "sorted acepta cualquier iterable y siempre devuelve una lista."
+    },
+    {
+      "id": "q23",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(\"10\" < \"9\")",
+      "options": [
+        "False",
+        "True",
+        "TypeError",
+        "None"
+      ],
+      "correct_answer": "True",
+      "explanation": "Las cadenas se comparan carácter a carácter: '1' < '9'."
+    },
+    {
+      "id": "q24",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(len(\"a\\nb\"), len(r\"a\\nb\"))",
+      "options": [
+        "3 3",
+        "4 4",
+        "3 4",
+        "4 3"
+      ],
+      "correct_answer": "3 4",
+      "explanation": "\\n es un solo carácter, pero en una cadena raw son dos (\\ y n)."
+    },
+    {
+      "id": "q25",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(\"x\".join(\"abc\"))",
+      "options": [
+        "xabc",
+        "abcx",
+        "axbxcx",
+        "axbxc"
+      ],
+      "correct_answer": "axbxc",
+      "explanation": "join intercala el separador entre los elementos del iterable."
+    },
+    {
+      "id": "q26",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(\"Python\"[::-1][1:3])",
+      "options": [
+        "yt",
+        "oh",
+        "nh",
+        "ht"
+      ],
+      "correct_answer": "oh",
+      "explanation": "'Python' invertida es 'nohtyP'; los índices 1 y 2 son 'oh'."
+    },
+    {
+      "id": "q27",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nf = lambda x, y=2: x ** y\nprint(f(3), f(2, 3))",
+      "options": [
+        "9 8",
+        "6 6",
+        "9 9",
+        "8 9"
+      ],
+      "correct_answer": "9 8",
+      "explanation": "f(3) = 3**2 = 9; f(2, 3) = 2**3 = 8."
+    },
+    {
+      "id": "q28",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(list(map(lambda x: x * 2, filter(lambda x: x % 2, [1, 2, 3, 4]))))",
+      "options": [
+        "[2, 4, 6, 8]",
+        "[4, 8]",
+        "[2, 6]",
+        "[1, 3]"
+      ],
+      "correct_answer": "[2, 6]",
+      "explanation": "filter deja los impares (1, 3) y map los duplica."
+    },
+    {
+      "id": "q29",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ndef outer(n):\n    def inner(x):\n        return x + n\n    return inner\n\nadd5 = outer(5)\nprint(add5(3))",
+      "options": [
+        "5",
+        "3",
+        "8",
+        "NameError"
+      ],
+      "correct_answer": "8",
+      "explanation": "inner es un cierre (closure): recuerda n = 5 aunque outer ya haya terminado."
+    },
+    {
+      "id": "q30",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ndef gen(n):\n    for i in range(n):\n        yield i * i\n\nprint(list(gen(4)))",
+      "options": [
+        "[1, 4, 9, 16]",
+        "[0, 1, 4, 9]",
+        "[0, 1, 4, 9, 16]",
+        "<generator object>"
+      ],
+      "correct_answer": "[0, 1, 4, 9]",
+      "explanation": "El generador produce los cuadrados de 0 a 3."
+    },
+    {
+      "id": "q31",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ng = (x for x in range(3))\nprint(next(g), next(g))",
+      "options": [
+        "0 0",
+        "0 1",
+        "1 2",
+        "[0, 1, 2]"
+      ],
+      "correct_answer": "0 1",
+      "explanation": "Cada next avanza el generador una posición."
+    },
+    {
+      "id": "q32",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\ng = (x for x in range(2))\nlist(g)\nprint(list(g))",
+      "options": [
+        "[0, 1]",
+        "[0, 1, 0, 1]",
+        "[]",
+        "StopIteration"
+      ],
+      "correct_answer": "[]",
+      "explanation": "Un generador solo se puede recorrer una vez; después queda agotado."
+    },
+    {
+      "id": "q33",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nprint(sorted([\"bb\", \"a\", \"ccc\"], key=len, reverse=True))",
+      "options": [
+        "['a', 'bb', 'ccc']",
+        "['ccc', 'bb', 'a']",
+        "['bb', 'a', 'ccc']",
+        "[3, 2, 1]"
+      ],
+      "correct_answer": "['ccc', 'bb', 'a']",
+      "explanation": "Se ordena por longitud, de mayor a menor."
+    },
+    {
+      "id": "q34",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\na = [1, [2, 3]]\nb = a[:]\nb[1].append(4)\nprint(a)",
+      "options": [
+        "[1, [2, 3]]",
+        "[1, [2, 3], 4]",
+        "[1, [2, 3, 4]]",
+        "Error"
+      ],
+      "correct_answer": "[1, [2, 3, 4]]",
+      "explanation": "a[:] es una copia superficial: la lista interna se comparte."
+    },
+    {
+      "id": "q35",
+      "type": "single_choice",
+      "question": "¿Qué modo de open() añade contenido al final de un archivo sin borrar lo que ya tiene?",
+      "options": [
+        "\"w\"",
+        "\"r+\"",
+        "\"x\"",
+        "\"a\""
+      ],
+      "correct_answer": "\"a\"",
+      "explanation": "\"a\" (append) escribe al final; \"w\" trunca el archivo."
+    },
+    {
+      "id": "q36",
+      "type": "single_choice",
+      "question": "¿Qué excepción se lanza al hacer open(\"no_existe.txt\", \"r\") si el archivo no existe?",
+      "options": [
+        "FileNotFoundError",
+        "ValueError",
+        "KeyError",
+        "EOFError"
+      ],
+      "correct_answer": "FileNotFoundError",
+      "explanation": "FileNotFoundError es una subclase de OSError (errno ENOENT)."
+    },
+    {
+      "id": "q37",
+      "type": "single_choice",
+      "question": "Si datos.txt contiene \"uno\\ndos\\n\", ¿qué imprime este código?\n\nwith open(\"datos.txt\") as f:\n    print(f.readlines())",
+      "options": [
+        "['uno', 'dos']",
+        "['uno\\n', 'dos\\n']",
+        "'uno\\ndos\\n'",
+        "['uno dos']"
+      ],
+      "correct_answer": "['uno\\n', 'dos\\n']",
+      "explanation": "readlines devuelve una lista de líneas que conservan el salto de línea."
+    },
+    {
+      "id": "q38",
+      "type": "single_choice",
+      "question": "¿Qué imprime este código?\n\nb = bytearray(3)\nprint(b)",
+      "options": [
+        "bytearray(b'\\x00\\x00\\x00')",
+        "bytearray(b'3')",
+        "[0, 0, 0]",
+        "b'000'"
+      ],
+      "correct_answer": "bytearray(b'\\x00\\x00\\x00')",
+      "explanation": "bytearray(n) crea n bytes a cero."
+    },
+    {
+      "id": "q39",
+      "type": "single_choice",
+      "question": "Al capturar un OSError, ¿qué indica que e.errno sea igual a errno.ENOENT?",
+      "options": [
+        "Permiso denegado",
+        "No existe el archivo o directorio",
+        "El archivo ya existe",
+        "Disco lleno"
+      ],
+      "correct_answer": "No existe el archivo o directorio",
+      "explanation": "ENOENT = 'No such file or directory'. Permiso denegado es EACCES y 'ya existe' es EEXIST."
+    },
+    {
+      "id": "q40",
+      "type": "single_choice",
+      "question": "¿Qué garantiza usar with open(...) as f:?",
+      "options": [
+        "Que el archivo se abre en modo binario",
+        "Que el archivo se crea si no existe",
+        "Que el archivo se cierra al salir del bloque, incluso si hay una excepción",
+        "Que no se lanzan excepciones"
+      ],
+      "correct_answer": "Que el archivo se cierra al salir del bloque, incluso si hay una excepción",
+      "explanation": "with gestiona el contexto y llama a close() automáticamente."
+    }
+  ]
+}
