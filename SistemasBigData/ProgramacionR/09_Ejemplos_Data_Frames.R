@@ -26,6 +26,7 @@ empleados <- data.frame(
 )
 empleados
 
+View(empleados)       # Abre el visor de datos de RStudio
 
 # ----------------------------------------------------------
 # 1. head() y tail() -> primeras y últimas filas
